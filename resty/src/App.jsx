@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.scss';
 
 // Let's talk about using index.js and some other name in the component folder.
@@ -10,17 +10,13 @@ import Footer from './Components/Footer';
 import Form from './Components/Form';
 import Results from './Components/Results';
 
-class App extends React.Component {
+function App() {
+  const[data, setData] = useState(null);
+  const[requestParams, setRequestParams] = useState({});
+  const[loading, setLoading] = useState(false); //how we set the loading when the api call is made
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: null,
-      requestParams: {},
-    };
-  }
-
-  callApi = (requestParams) => {
+  const callApi = (params) => {
+    console.log('API call made!', params);
     // mock output
     const data = {
       count: 2,
@@ -29,21 +25,25 @@ class App extends React.Component {
         {name: 'fake thing 2', url: 'http://fakethings.com/2'},
       ],
     };
-    this.setState({data, requestParams});
+    setData(data);
+    console.log('we set the data:', data);
+    setRequestParams(params);
+    console.log('Request params have been set captain:', params)
+    setLoading(false);
+    console.log('The load is false milord')
   }
 
-  render() {
     return (
       <React.Fragment>
         <Header />
-        <div>Request Method: {this.state.requestParams.method}</div>
-        <div>URL: {this.state.requestParams.url}</div>
-        <Form handleApiCall={this.callApi} />
-        <Results data={this.state.data} />
+        <div>Request Method: {requestParams.method}</div>
+        <div>URL: {requestParams.url}</div>
+        <Form handleApiCall={callApi} />
+        {loading ? <div>Loading...</div> : <Results data={data} />} 
         <Footer />
       </React.Fragment>
     );
   }
-}
+
 
 export default App;
