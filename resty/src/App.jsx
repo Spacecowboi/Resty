@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.scss';
 
 // Let's talk about using index.js and some other name in the component folder.
@@ -15,23 +15,24 @@ function App() {
   const[requestParams, setRequestParams] = useState({});
   const[loading, setLoading] = useState(false); //how we set the loading when the api call is made
 
-  const callApi = (params) => {
-    console.log('API call made!', params);
-    // mock output
-    const data = {
-      count: 2,
-      results: [
-        {name: 'fake thing 1', url: 'http://fakethings.com/1'},
-        {name: 'fake thing 2', url: 'http://fakethings.com/2'},
-      ],
-    };
-    setData(data);
-    console.log('we set the data:', data);
-    setRequestParams(params);
-    console.log('Request params have been set captain:', params)
+  const callApi = async (params) => {
+    setLoading(true);
+    try {
+      const response = await fetch(params.url, {method: params.method});
+      const data = await response.json();
+      setData(data);
+      setRequestParams(params);
+    } catch (error) {
+      console.error('Error:', error);
+    }
     setLoading(false);
-    console.log('The load is false milord')
   }
+
+  useEffect(() => {
+    if(requestParams.url && requestParams.method) {
+      callApi(requestParams);
+    }
+  }, [requestParams]);
 
     return (
       <React.Fragment>
