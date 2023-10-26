@@ -1,16 +1,7 @@
 import React from 'react';
 import './Results.scss';
 import JSONPretty from 'react-json-pretty';
-
-// class Results extends React.Component {
-//   render() {
-//     return (
-//       <section>
-//         <pre>{this.props.data ? JSON.stringify(this.props.data, undefined, 2) : null}</pre>
-//       </section>
-//     );
-//   }
-// }
+import 'react-json-pretty/themes/monikai.css';
 
 function Results({data}) {
   return (
