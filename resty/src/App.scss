@@ -1,35 +1,39 @@
 $backgroundColor: #ff91af;
+$borderColor: darken($backgroundColor, 50);
+$buttonColor: #0abde3;
 
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background: $backgroundColor;
+  border-radius: 10px;
 }
 
 body {
-  background: $backgroundColor;
-  height: 100%;
-
   #root {
     display: flex;
     flex-direction: column;
     height: 100%;
+    margin: 0;
+    padding: 0;
   }
 
   footer {
     background: darken($backgroundColor, 50);
-    border-top: 1px solid #eee;
+    border-top: 1px solid $borderColor;
     padding: 1em 3em;
     margin: 0;
-    color: #0abde3
+    color: $buttonColor;
   }
 
   header {
     background: darken($backgroundColor, 75);
-    border-bottom: 1px solid #eee;
-    color: #0abde3;
+    border-bottom: 1px solid $borderColor;
+    color: $buttonColor;
     padding: 0;
     margin: 0;
     text-align: center;
+    background-color: #00ff00; // Bright green, common in 90's web design
   }
 }

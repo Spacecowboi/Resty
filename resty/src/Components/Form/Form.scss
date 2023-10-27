@@ -1,21 +1,39 @@
 $backgroundColor: #ff91af;
-$radius: 40%;
+$radius: 3%;
 
 form {
   display: inline-block;
   margin: auto;
-  width: 200px;
+  width: 100%;
+  max-width: 200px;
+  box-sizing: border-box;
+  border-radius: $radius;
 
   label {
     display: flex;
+    flex-direction: column;
     margin: 1rem 0;
+    box-sizing: border-box;
+
+    span {
+      margin-bottom: 0.5rem;
+    }
+
+    input {
+      box-sizing: border-box;
+      width: 100%;
+      border-radius: $radius;
+    }
 
     &.methods {
+      flex-direction: row;
+
       span {
         cursor: pointer;
         margin-right: 1rem;
         padding: .25rem .5rem;
         background: #ccc;
+        border-radius: $radius;
 
         &:hover, &.active {
           background: #fff;

@@ -12,7 +12,9 @@ function Results({data}) {
           <p>{result.url}</p>
         </div>
       ))}
-      <JSONPretty id="json-pretty" data={data} />
+      <div className='json-pretty'>
+      <JSONPretty id='json-pretty' data={data} />
+      </div>
     </div>
   );
 }
