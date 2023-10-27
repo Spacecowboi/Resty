@@ -1,13 +1,20 @@
 header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-bottom: 1px solid #ddd;
-  
-    h1 {
-      font-size: 2em;
-      color: #431919;
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00ff00; // Bright green, common in 90's web design
+  padding: 20px;
+  border-bottom: 5px dashed #0000ff; 
+
+  h1 {
+    font-size: 2em;
+    color: #000000; 
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif; // Comic Sans for that classic 90's vibe you know what im sayin
+    text-transform: uppercase;
+    background-color: #ff91af;
+    padding: 10px;
+    border: 3px solid #ff00ff; 
+    box-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff, 0 0 20px #ff00ff;
+    text-shadow: 2px 2px 4px #000000;
   }
+}
