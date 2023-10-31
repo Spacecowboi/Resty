@@ -1,22 +1,26 @@
-# Create Vite Project from Template
+# Rest-y
 
-Creates a Vite project with all the necessary dependencies installed and configuration in place.
+### Description
 
-## Usage
+* This is a simple React application that makes a request to a request to an API and displays the result based on the type of method designated.
 
-1. Clone this repo to your local machine.
+### UML
 
-1. Execute the `create_from_template.sh` file using bash.  Make sure to include a name for your project, no spaces please.
+[UML](Lab26 UML.png)
 
-    ```shell
-    bash path/to/create_from_template.sh project-name
-    ```
+### Installation
 
-1. Run your scripts!
+* Clone to an empty repository
+* NPM Install
+* NPM Run Dev
 
-    ```shell
+### Authors
 
-    cd project-name
-    npm test
+* Jacob Knaack (Original Author)
+* Anthony Cunningham (Secondary Author)
 
-    ```
+### Resources
+
+* Youtube
+* StackOverflow
+* ChatGPT 3.5 (For help writing tests and troubleshooting)
